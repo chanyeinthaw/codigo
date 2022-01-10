@@ -1,0 +1,27 @@
+@use "../../../../styles/utils" as *;
+
+.headline {
+    display: grid;
+    grid-auto-flow: row;
+
+    p {
+        margin: 0;
+        font-size: 6vw;
+        font-weight: bold;
+
+        &:nth-of-type(3) {
+            color: #d5333e;
+        }
+
+        &::selection {
+            background: #fff;
+            color: #0000ff;
+        }
+    }
+
+    @include sm {
+        p {
+            font-size: 10.5vw;
+        }
+    }
+}
