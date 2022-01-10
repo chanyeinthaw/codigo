@@ -14,3 +14,8 @@ a {
 * {
   box-sizing: border-box;
 }
+
+*::selection {
+  background: transparent !important;
+  color: #0000ff !important;
+}
