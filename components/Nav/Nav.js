@@ -74,7 +74,7 @@ function SmallScreenNavContent({ links, isSecondary }) {
                 return <Link key={index} href={link.href}>{ link.text }</Link>
             }) }
             <Link href={'/request-a-quote'}>Request a quote</Link>
-            <Link href={'/contact'}>Let's chat</Link>
+            <Link href={'/contact'}>Let&apos;s chat</Link>
         </div>
 
         <div className={clsx(css.circle, {
