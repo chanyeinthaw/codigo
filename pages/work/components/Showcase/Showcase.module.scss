@@ -16,6 +16,8 @@
         grid-template-columns: 30px auto 30px;
         grid-template-rows: 30px 30px auto 30px 30px;
 
+        transition: .3s ease-in-out;
+
         p, span {
             color: #fafafa;
         }
