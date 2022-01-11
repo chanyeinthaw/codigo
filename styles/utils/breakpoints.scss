@@ -38,6 +38,12 @@ $screen-xxl-min: 1280px;
     }
 }
 
+@mixin xxl-and-up {
+    @media all and (min-width: #{$screen-xxl-min}) {
+        @content;
+    }
+}
+
 @mixin down($screen) {
     @media all and (max-width: $screen+'px') {
         @content;
