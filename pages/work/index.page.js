@@ -3,6 +3,7 @@ import {useRouter} from "next/router";
 import {useMemo} from "react";
 import Headline from "./components/Headline/Headline";
 import Categories from "./components/Categories/Categories";
+import Footer from "../../components/Footer/Footer";
 
 export default function Home() {
     let router = useRouter()
@@ -31,6 +32,7 @@ export default function Home() {
                     router={router}
                     currentTag={currentTag} />
             </section>
+            <Footer />
         </section>
     )
 }

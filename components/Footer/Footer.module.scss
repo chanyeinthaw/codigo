@@ -1,0 +1,115 @@
+@use "../../styles/utils" as *;
+
+.footer {
+    display: grid;
+    grid-auto-flow: row;
+
+    padding: 0 24px 24px 24px;
+
+    p {
+        justify-self: center;
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #d5333e;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        display: grid;
+        grid-auto-flow: row;
+
+        li {
+            cursor: pointer;
+
+            padding: 32px 0;
+            display: grid;
+            grid-auto-flow: row;
+            gap: 12px;
+            border-bottom: 1px solid #e2e2e2;
+
+            span:first-of-type {
+                font-size: 2rem;
+                font-weight: bold;
+
+                transition: .3s ease-in-out;
+
+                &:after {
+                    content: "";
+                    width: 15px;
+                    height: 9px;
+                    display: inline-block;
+                    float: right;
+                    margin-top: 14px;
+                    margin-left: 20px;
+                    background-image: url(https://www.codigo.co/img/icons/arrow-red.svg);
+                    background-repeat: no-repeat;
+
+                    transition: .3s ease-in-out;
+                }
+            }
+
+            span:last-of-type {
+                font-size: 13px;
+            }
+
+            &:hover {
+                span:first-of-type {
+                    color: #d5333e;
+
+                    &:after {
+                        transform: translateX(8px);
+                    }
+                }
+            }
+        }
+
+        @include up(981) {
+            grid-template-columns: repeat(4, max-content);
+            gap: 16px;
+
+            li {
+                padding: 32px;
+                border-bottom: none;
+                border-right: 1px solid #e2e2e2;
+            }
+
+            li:last-of-type {
+                border: none;
+            }
+        }
+    }
+
+    .links {
+        margin-top: 64px;
+        display: grid;
+        grid-auto-flow: row;
+        justify-items: center;
+        gap: 16px;
+
+        div {
+            display: grid;
+            grid-template-columns: repeat(4, max-content);
+            gap: 32px;
+
+            margin-bottom: 16px;
+
+            & > * {
+                cursor: pointer;
+            }
+        }
+
+        p {
+            color: #212121;
+            font-weight: normal;
+            font-size: 13px;
+            margin: 0;
+        }
+    }
+
+    @include up(981) {
+        justify-items: center;
+    }
+}
