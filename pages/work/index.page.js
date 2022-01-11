@@ -4,8 +4,10 @@ import {useMemo} from "react";
 import Headline from "./components/Headline/Headline";
 import Categories from "./components/Categories/Categories";
 import Footer from "../../components/Footer/Footer";
+import Showcase from "./components/Showcase/Showcase";
+import axios from "axios";
 
-export default function Home() {
+export default function Home({ data }) {
     let router = useRouter()
     let currentTag = router.query.tag ?? 'all'
     let links = useMemo(() => ([
@@ -32,7 +34,22 @@ export default function Home() {
                     router={router}
                     currentTag={currentTag} />
             </section>
+            <Showcase works={data?.works ?? []}/>
             <Footer />
         </section>
     )
+}
+
+export async function getServerSideProps(context) {
+    let httpProtocol = context.req.headers.host.includes("localhost") ? 'http' : 'https';
+
+    let res = await axios.get(`${httpProtocol}://${context.req.headers.host}/api/work`)
+
+    return {
+        props: {
+            data: {
+                ...res.data
+            }
+        }
+    }
 }
