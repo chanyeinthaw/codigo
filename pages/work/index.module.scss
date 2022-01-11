@@ -9,11 +9,15 @@
 .headlineAndCategories {
     display: grid;
     grid-auto-flow: row;
-    padding: 110px 57px 0 57px;
+    padding: 110px 300px 0 300px;
     gap: 64px;
 
     @include sm {
         padding: 110px 24px 0 24px;
+    }
+
+    @include md {
+        padding: 110px 57px 0 57px;
     }
 
     @include lg {
@@ -24,7 +28,7 @@
         padding: 110px 135px 0 135px;
     }
 
-    @include up(1440) {
+    @include xxl {
         padding: 110px 200px 0 200px;
     }
 }
