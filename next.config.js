@@ -9,7 +9,7 @@ module.exports = {
             path.join(__dirname, 'pages')
         ],
     },
-    pageExtensions: ['page.jsx', 'page.js'],
+    pageExtensions: ['page.jsx', 'page.js', 'api.js'],
     async redirects() {
         return [
             {
