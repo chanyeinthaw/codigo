@@ -77,6 +77,14 @@
             display: flex;
             flex-direction: row;
             gap: 8px;
+            align-items: center;
+
+        }
+
+        li:last-of-type {
+            svg {
+                height: 10px;
+            }
         }
     }
 }

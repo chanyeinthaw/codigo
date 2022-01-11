@@ -1,10 +1,8 @@
 import css from "./Categories.module.scss";
 import clsx from "clsx";
-import Image from "next/image";
-import appIcon from "../../../../assets/icons/ico-app.svg";
-import webIcon from "../../../../assets/icons/ico-web.svg";
-import cmsIcon from "../../../../assets/icons/ico-cms.svg";
-import uiuxIcon from "../../../../assets/icons/ico-uiux.svg";
+import {BsGrid1X2, BsPhone} from "react-icons/bs";
+import {RiComputerLine} from "react-icons/ri";
+import {BiCog} from "react-icons/bi";
 
 export default function Categories({ links, router, currentTag }) {
     return  <section className={css.categories}>
@@ -30,19 +28,19 @@ export default function Categories({ links, router, currentTag }) {
             <p>legend</p>
             <ul>
                 <li>
-                    <Image src={appIcon} width={13} height={13} alt={'app'}/>
+                    <BsPhone color={'#212121'} />
                     <span>app</span>
                 </li>
                 <li>
-                    <Image src={webIcon} width={13} height={13} alt={'web'}/>
+                    <RiComputerLine color={'#212121'} />
                     <span>web</span>
                 </li>
                 <li>
-                    <Image src={cmsIcon} width={13} height={13} alt={'cms'}/>
+                    <BiCog color={'#212121'} />
                     <span>cms</span>
                 </li>
                 <li>
-                    <Image src={uiuxIcon} width={13} height={13} alt={'ui/ux'}/>
+                    <BsGrid1X2 color={'#212121'} />
                     <span>ui/ux</span>
                 </li>
             </ul>
