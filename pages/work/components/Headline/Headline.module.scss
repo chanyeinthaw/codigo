@@ -6,7 +6,7 @@
 
     p {
         margin: 0;
-        font-size: 3rem;
+        font-size: 3.7rem;
         font-weight: bold;
 
         &:nth-of-type(3) {
@@ -22,6 +22,24 @@
     @include sm {
         p {
             font-size: 10.5vw;
+        }
+    }
+
+    @include md {
+        p {
+            font-size: 3rem;
+        }
+    }
+
+    @include lg {
+        p {
+            font-size: 3.3rem;
+        }
+    }
+
+    @include xl {
+        p {
+            font-size: 3.5rem;
         }
     }
 }
