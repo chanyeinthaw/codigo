@@ -109,7 +109,7 @@
     }
 
     @include up(1051) {
-        padding: 0;
+        padding: 0 0 24px;
         justify-items: center;
     }
 }
