@@ -19,19 +19,23 @@ export default function Nav({ variant = 'main'}) {
 
     let isSecondary = useMemo(() => variant !== 'main', [variant])
 
-    return <nav className={clsx(css.navRoot, {
-        [css.navRootSecondary]: isSecondary
-    })}>
-        <MainNavContent links={links} router={router} isSecondary={isSecondary}/>
-        <SmallScreenNavContent links={links} isSecondary={isSecondary}/>
-    </nav>
+    return <React.Fragment>
+        <nav className={clsx(css.navRoot, {
+            [css.navRootSecondary]: isSecondary
+        })}>
+            <MainNavContent links={links} router={router} isSecondary={isSecondary}/>
+            <SmallScreenNavContent links={links} isSecondary={isSecondary}/>
+        </nav>
+    </React.Fragment>
 }
 
 function MainNavContent({ links, router, isSecondary }) {
     return <React.Fragment>
         { !isSecondary && <React.Fragment>
             <Link href={'https://codigo.co'} passHref>
-                <Image width={145} height={33} src={logo} alt='logo' />
+                <a>
+                    <Image width={145} height={33} src={logo} alt='logo' />
+                </a>
             </Link>
             <ul className={css.links}>
                 { links.map((link, index) => {

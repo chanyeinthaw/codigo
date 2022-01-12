@@ -7,12 +7,14 @@
     padding: 0 30px;
     align-items: center;
 
-    @include animateEntry(fade-in-bottom);
-
     gap: 64px;
 
     * {
         font-size: 13px;
+    }
+
+    a {
+        @include animateEntry(fade-in-bottom);
     }
 
     img {
@@ -20,6 +22,8 @@
     }
 
     ul, .links {
+        @include animateEntry(fade-in-bottom);
+
         list-style-type: none;
         display: flex;
         flex-direction: row;
@@ -48,6 +52,8 @@
     }
 
     button {
+        @include animateEntry(fade-in-bottom);
+
         border-radius: 24px;
         background-color: #212121;
         color: #fafafa;
@@ -64,6 +70,8 @@
     }
 
     .menuButton {
+        @include animateEntry(fade-in-bottom);
+
         width: 48px;
         height: 48px;
         display: none;
@@ -203,6 +211,10 @@
 .navRootSecondary {
     grid-template-columns: max-content max-content;
     justify-content: space-between;
+
+    .backToWorkListItem {
+        @include animateEntry(fade-in-bottom);
+    }
 
     .backToWorkListItem:before {
         content: "";
