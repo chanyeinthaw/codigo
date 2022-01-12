@@ -3,6 +3,7 @@
 .headline {
     display: grid;
     grid-auto-flow: row;
+    @include animateEntry(fade-in-top);
 
     p {
         margin: 0;

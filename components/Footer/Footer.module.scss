@@ -66,12 +66,11 @@
             }
         }
 
-        @include up(981) {
+        @include up(1051) {
             grid-template-columns: repeat(4, max-content);
-            gap: 16px;
 
             li {
-                padding: 32px;
+                padding: 25px;
                 border-bottom: none;
                 border-right: 1px solid #e2e2e2;
             }
@@ -109,7 +108,8 @@
         }
     }
 
-    @include up(981) {
+    @include up(1051) {
+        padding: 0;
         justify-items: center;
     }
 }

@@ -1,7 +1,7 @@
 @use "../../../../styles/utils" as *;
 .showcase {
     display: grid;
-    grid-template-columns: repeat(4, 25%);
+    grid-template-columns: repeat(3, 33%);
     grid-auto-flow: row;
 
     .workItem {
@@ -11,6 +11,8 @@
         max-height: 32vw;
 
         position: relative;
+
+        @include animateEntry(enlarge);
 
         display: grid;
         grid-template-columns: 30px auto 30px;
@@ -75,6 +77,10 @@
         }
     }
 
+    .mediumSized {
+        grid-column: span 2;
+    }
+
     @include sm {
         grid-template-columns: 1fr;
 
@@ -108,14 +114,14 @@
         }
     }
 
+    @include up(1169) {
+        grid-template-columns: repeat(4, 25%);
+    }
+
     @include xxl-and-up {
         .workItem {
             max-height: 22vw;
             min-height: 22vw;
         }
     }
-}
-
-.mediumSized {
-    grid-column: span 2;
 }

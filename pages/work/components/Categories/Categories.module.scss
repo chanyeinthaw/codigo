@@ -5,6 +5,8 @@
     grid-auto-flow: row;
     gap: 64px;
 
+    @include animateEntry(fade-in-top);
+
     ul {
         list-style-type: none;
         padding: 0;
@@ -45,7 +47,7 @@
         display: none;
     }
 
-    @include up(769) {
+    @include up(1169) {
         grid-template-columns: 1fr max-content;
         align-items: end;
     }

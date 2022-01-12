@@ -7,6 +7,8 @@
     padding: 0 30px;
     align-items: center;
 
+    @include animateEntry(fade-in-bottom);
+
     gap: 64px;
 
     * {

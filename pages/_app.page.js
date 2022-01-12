@@ -3,7 +3,7 @@ import Nav from "../components/Nav/Nav";
 
 function MyApp({ Component, pageProps }) {
   return (
-      <main style={{ display: 'grid' }}>
+      <main style={{ }}>
         <Nav variant={'main'}/>
         <Component {...pageProps} />
       </main>
