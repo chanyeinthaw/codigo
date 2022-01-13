@@ -5,7 +5,7 @@ import {useRouter} from "next/router";
 function MyApp({Component, pageProps}) {
     let router = useRouter()
     return (
-        <main style={{}}>
+        <main style={{ overflow: 'hidden' }}>
             <Nav variant={router.pathname === '/work' ? 'main' : 'secondary'}/>
             <Component {...pageProps} />
         </main>
