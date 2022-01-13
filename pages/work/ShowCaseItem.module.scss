@@ -1,0 +1,187 @@
+@use "../styles/utils" as *;
+
+.showcase {
+    display: grid;
+    justify-content: center;
+    grid-template-areas:
+            "title slideshow"
+            "details slideshow"
+            ". slideshow";
+    row-gap: 32px;
+
+    .title {
+        @include animateEntry(fade-in-top);
+        margin: 0;
+        grid-area: title;
+        font-size: 3.2rem;
+        font-weight: bold;
+    }
+
+    .details {
+        @include animateEntry(fade-in-top);
+
+        display: grid;
+        grid-area: details;
+        gap: 32px;
+        max-width: 433px;
+
+        .links {
+            display: flex;
+            flex-direction: row;
+
+            a {
+                padding: 16px;
+                border: 1px solid #e2e2e2;
+
+                display: grid;
+                grid-template-areas: "svg av" "svg store";
+                column-gap: 8px;
+
+                svg {
+                    grid-area: svg;
+                    width: 32px;
+                    height: 32px;
+                }
+
+                span {
+                    font-size: 12px;
+                    font-weight: bold;
+                }
+
+                & :nth-of-type(2) {
+                    grid-area: av;
+                    text-transform: uppercase;
+                }
+
+                & :nth-of-type(3) {
+                    grid-area: store;
+                }
+            }
+        }
+
+        .description {
+            font-size: 12px;
+            margin: 0;
+        }
+
+        .keyFeatures {
+            display: grid;
+            grid-auto-flow: column;
+
+            p {
+                margin: 0;
+                font-size: 13px;
+                font-weight: bold;
+            }
+
+            ul {
+                border-left: 1px solid #e2e2e2;
+                margin: 0;
+                padding: 0 0 0 24px;
+                list-style-type: none;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+
+                li {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    .slideShow {
+        grid-area: slideshow;
+        display: grid;
+        grid-template-areas: "images" "indicator";
+        row-gap: 32px;
+        justify-items: center;
+
+        div.images {
+            grid-area: images;
+            display: grid;
+            grid-template-areas: "image";
+            position: relative;
+
+            img {
+                grid-area: image;
+                opacity: 0;
+                transition: 2s ease-in-out;
+                height: clamp(300px, 50vw, 512px);
+            }
+
+            img.visible {
+                opacity: 1;
+            }
+
+            .circle {
+                position: absolute;
+
+                border-radius: 100%;
+                background-color: #72d2cb;
+
+                top: 10%;
+                right: 10%;
+                bottom: 10%;
+                left: 10%;
+
+                @include animateEntry(enlarge-from-tiny);
+
+                z-index: -1;
+            }
+        }
+
+        div.dots {
+            display: flex;
+            flex-direction: row;
+            grid-area: indicator;
+            gap: 16px;
+
+            span {
+                width: 8px;
+                height: 8px;
+                background: #e2e2e2;
+                border-radius: 100%;
+
+                transition: 1.5s ease-in-out;
+            }
+
+            span.red {
+                background: #d5333e;
+            }
+        }
+    }
+
+    @include down(980) {
+        grid-template-areas: "title" "slideshow" "details";
+        gap: 32px;
+
+        .title {
+            font-size: 2.2rem;
+        }
+
+        .details {
+            grid-auto-flow: row;
+            gap: 32px;
+            max-width: 90vw !important;
+
+            .keyFeatures {
+                grid-auto-flow: row;
+                gap: 14px;
+
+                ul {
+                    padding: 0;
+                    border: none;
+                }
+            }
+        }
+
+        .slideShow {
+            .images {
+                img {
+                    height: clamp(300px, 70vw, 700px);
+                }
+            }
+        }
+    }
+}
