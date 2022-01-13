@@ -8,6 +8,7 @@
             "details slideshow"
             ". slideshow";
     row-gap: 32px;
+    position: relative;
 
     .title {
         @include animateEntry(fade-in-top);
@@ -88,6 +89,52 @@
                 }
             }
         }
+
+    }
+
+    .navs {
+        display: flex;
+        position: absolute;
+        width: 100%;
+        top: 20%;
+
+        justify-content: space-between;
+
+        a:first-of-type {
+            transform: translateX(-40px);
+
+            svg {
+                transform: translateX(15px);
+            }
+        }
+
+        a:last-of-type {
+            transform: translateX(40px);
+
+            svg {
+                transform: translateX(-15px);
+            }
+        }
+
+        a {
+            transition: .3s ease-in-out;
+
+            background: #d5333e;
+            display: grid;
+            place-content: center;
+
+            border-radius: 100%;
+            width: 80px;
+            height: 80px;
+
+            box-shadow: 0 5px 25px 0 rgba(0,0,0,.05),0 5px 5px 0 rgba(0,0,0,.03);
+
+            svg {
+                //width: 24px;
+                //height: 20px;
+                color: #fafafa;
+            }
+        }
     }
 
     .slideShow {
@@ -104,6 +151,7 @@
             position: relative;
 
             img {
+                animation-delay: 1s;
                 grid-area: image;
                 opacity: 0;
                 transition: 2s ease-in-out;
@@ -111,7 +159,8 @@
             }
 
             img.visible {
-                opacity: 1;
+                @include animateEntry(fade-in-top);
+                animation-delay: .5s;
             }
 
             .circle {
@@ -153,7 +202,7 @@
     }
 
     @include down(980) {
-        grid-template-areas: "title" "slideshow" "details";
+        grid-template-areas: "title" "slideshow" "details" "navs";
         gap: 32px;
 
         .title {
@@ -180,6 +229,23 @@
             .images {
                 img {
                     height: clamp(300px, 70vw, 700px);
+                }
+            }
+        }
+    }
+
+    @include down(768) {
+        .navs {
+            position: unset;
+            grid-area: navs;
+            display: flex;
+            margin-top: 32px;
+
+            a {
+                transform: unset !important;
+
+                svg {
+                    transform: unset !important;
                 }
             }
         }

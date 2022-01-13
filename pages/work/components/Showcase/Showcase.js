@@ -17,7 +17,7 @@ export default function Showcase({ works }) {
         {
             works.map((work, index) => {
                 return (
-                    <Link key={index} href={'https://google.com'} passHref>
+                    <Link key={index} href={'/work/' + work.slug } passHref>
                         <a className={clsx(css.workItem, {
                             [css.mediumSized]: work.grid_size === 0.5
                         })}>

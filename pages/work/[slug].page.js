@@ -7,6 +7,7 @@ import {FaGooglePlay} from "react-icons/fa";
 import Link from 'next/link'
 import {useEffect, useState} from "react";
 import clsx from "clsx";
+import {AiOutlineArrowLeft, AiOutlineArrowRight} from "react-icons/ai";
 
 export default function ShowCaseItem() {
     let images = [
@@ -79,6 +80,18 @@ export default function ShowCaseItem() {
                     }) }
                 </div>
             </section>
+            <div className={css.navs}>
+                <Link href={'/work/prev'}>
+                    <a>
+                        <AiOutlineArrowLeft />
+                    </a>
+                </Link>
+                <Link href={'/work/next'}>
+                    <a>
+                        <AiOutlineArrowRight />
+                    </a>
+                </Link>
+            </div>
         </section>
         <Footer />
     </section>
